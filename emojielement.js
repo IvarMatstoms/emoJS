@@ -96,6 +96,22 @@ function getEmojiElement(id) {
                     }
                 }
             }
+        } else if (hex == "d83edd47" || emoji == "sort") {
+            return function(key) {
+              keyhex=key.hexEncode()
+                if (keyhex == "d83ddd24") {
+                    elements.sort(function(a, b) {
+                        var texta = a.innerHTML
+                        var textb = b.innerHTML
+                        if (texta < textb)
+                            return -1;
+                        if (texta > textb)
+                            return 1;
+                        return 0; //default return value (no sorting)
+                    });
+                }
+                return getEmojiElement(elements)
+            }
         }
         //return this
 
