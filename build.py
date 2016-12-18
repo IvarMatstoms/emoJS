@@ -1,5 +1,5 @@
 import requests
-files=["emo.js","functions.js","util.js","emojielement.js"]
+files=["emo.js","util.js","emojielement.js","elementbuilder.js","functions.js"]
 jstot=""
 for file in files:
 	f=open(file,"r")

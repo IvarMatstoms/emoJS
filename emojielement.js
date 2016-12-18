@@ -24,6 +24,13 @@ function getEmojiElement(id){
     }
     //console.log(elements)
     var hex=emoji.hexEncode()
+    //📛
+    if(hex=="d83ddcdb" || emoji=="id"){
+      return function(id){
+      getDOM()[0].id=id
+      return getEmojiElement(elements)
+    }
+    }
     //🤰
     if(hex=="d83edd30" || emoji=="append"){
         return function(element){

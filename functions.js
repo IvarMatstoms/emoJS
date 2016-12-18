@@ -20,20 +20,5 @@ emojifunctions.push({"hexcode":"d83ddd0d","name":"find","function":function(id){
   return getEmojiElement(id)
 }})
 
-emojifunctions.push({"hexcode":"d83ddca1","name":"create","function":function(tag,attr,inner){
-  var ele=document.createElement(tag)
-  if(typeof attr=="object"){
-    //console.log(keys(attr))
-  var k=keys(attr)
-  var i=0
-  while (i<k.length){
-    ele.setAttribute(k[i],attr[k[i]])
-    i=i+1
-  }
-  }
-  if(typeof inner=="string"){
-    ele.innerHTML=inner
-  }
-  //console.log(getEmojiElement(ele))
-  return getEmojiElement(ele)
-}})
+emojifunctions.push({"hexcode":"d83ddca1","name":"create","function":createEmojiElement
+})
