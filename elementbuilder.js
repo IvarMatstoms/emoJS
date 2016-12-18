@@ -1,25 +1,14 @@
-function createEmojiElement(tag, attr, inner) {
+function createEmojiElement(tag,attr,inner){
+  return getEmojiElement(createEmojiElementDom(tag,attr,inner))
+
+}
+function createEmojiElementDom(tag, attr, inner) {
     if(Array.isArray(tag) && typeof tag[0]=="object"){
-        eles=[]
-        for (t=0;t<tag.length;t++){
-          //console.log(tag[t])
-          var ele = document.createElement(tag[t][0])
 
-          if (typeof tag[t][1] == "object") {
-              //console.log(keys(attr))
-
-              var k = keys(tag[t][1])
-              var ki = 0
-              while (ki < k.length) {
-                  ele.setAttribute(k[ki], tag[t][1][k[ki]])
-                  ki = ki + 1
-              }
-          }
-          if (typeof tag[t][2] == "string") {
-              ele.innerHTML = tag[t][2]
-          }
-          eles.push(ele)
-        }
+         eles=[]
+         for (var t2=0;t2<tag.length;t2++){
+        Array.prototype.push.apply(eles,createEmojiElementDom(tag[t2][0],tag[t2][1],tag[t2][2]))
+         }
     }else{
     attr = attr || [{}]
     inner = inner || [null]
@@ -58,7 +47,5 @@ function createEmojiElement(tag, attr, inner) {
 
     }
     }
-    //console.log(getEmojiElement(ele))
-
-    return getEmojiElement(eles)
+    return eles
 }
