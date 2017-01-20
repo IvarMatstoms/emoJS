@@ -25,14 +25,14 @@ function getEmojiElement(id) {
         //console.log(elements)
         var hex = emoji.hexEncode()
             //📛
-        if (hex == "d83ddcdb" || emoji == "id") {
+        if (hex == "d83ddcdb" || emoji == "id" || hex=="📛".hexEncode()) {
             return function(id) {
                 getDOM()[0].id = id
                 return getEmojiElement(elements)
             }
         }
         //🤰
-        if (hex == "d83edd30" || emoji == "append") {
+        if (hex == "d83edd30" || emoji == "append" || hex=="🤰".hexEncode()) {
             return function(element) {
                 //console.log(getDOM(element))
                 var i = 0
@@ -44,10 +44,10 @@ function getEmojiElement(id) {
                 }
                 return getEmojiElement(elements)
             }
-        } else if (hex == "d83ddcc1" || emoji == "getDOM") {
+        } else if (hex == "d83ddcc1" || emoji == "getDOM" || hex=="📁".hexEncode()) {
             //console.log(getDOM())
             return getDOM()
-        } else if (hex == "270f" || emoji == "attr") {
+        } else if (hex == "270f" || emoji == "attr" || hex=="✏".hexEncode()) {
             return function(attr, value) {
                     if (typeof attr == "object") {
                         var k = keys(attr)
@@ -71,7 +71,7 @@ function getEmojiElement(id) {
                     return getEmojiElement(elements)
                 }
                 //📃
-        } else if (hex == "d83ddcc3" || emoji == "text") {
+        } else if (hex == "d83ddcc3" || emoji == "text" || hex=="📃".hexEncode()) {
             return function(value) {
                     var i = 0;
                     while (i < elements.length) {
@@ -81,10 +81,10 @@ function getEmojiElement(id) {
                     return getEmojiElement(elements)
                 }
                 //🔪
-        } else if (hex == "d83ddd2a" || emoji == "remove") {
+        } else if (hex == "d83ddd2a" || emoji == "remove" || hex=="🔪".hexEncode()) {
             return function(emoji2) {
                 var hex2 = emoji2.hexEncode()
-                if (hex2 == "d83ddc66" || hex2 == "d83ddc67" || emoji2 == "children") {
+                if (hex2 == "d83ddc66" || hex2 == "d83ddc67" || emoji2 == "children"  || hex=="👦".hexEncode()  || hex=="👧".hexEncode()) {
                     var parents = getDOM();
                     var pi = 0
                     while (pi < parents.length) {
@@ -96,10 +96,10 @@ function getEmojiElement(id) {
                     }
                 }
             }
-        } else if (hex == "d83edd47" || emoji == "sort") {
+        } else if (hex == "d83edd47" || emoji == "sort" || hex=="🥇".hexEncode()) {
             return function(key) {
               keyhex=key.hexEncode()
-                if (keyhex == "d83ddd24") {
+                if (keyhex == "d83ddd24" || keyhex=="🔤".hexEncode()) {
                     elements.sort(function(a, b) {
                         var texta = a.innerHTML
                         var textb = b.innerHTML

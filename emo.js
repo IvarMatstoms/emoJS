@@ -15,7 +15,7 @@ function emoji(emoji) {
   var hex=emoji.hexEncode()
   var i=0;
   while (i<emojifunctions.length){
-  if (emoji.hexEncode() == emojifunctions[i]["hexcode"]) {
+  if (emoji.hexEncode() == emojifunctions[i]["hexcode"] || emoji.hexEncode()==emojifunctions[i]["emoji"].hexEncode()) {
     return emojifunctions[i]["function"]
   }
   i=i+1
